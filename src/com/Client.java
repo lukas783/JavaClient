@@ -1,5 +1,6 @@
 package com;
 
+import com.UI.UI;
 import com.io.output;
 import com.net.ConnectionHandler;
 
@@ -14,23 +15,21 @@ import java.lang.*;
 /**
  * Created by Lukas on 10/31/2015.
  */
-public class Client extends JPanel implements MouseListener, KeyListener {
+public class Client {
 
     public boolean online = false;
     public output ostream;
-    public Graphics g;
-    String username = "";
-    JTextArea u;
 
     //Creates an invokable run statement that 'kicks off' the GUI/Applet
     public static void main(String[] argv) {
         Runnable r = () -> {
-            init();
+            UI ui = new UI();
+            ui.setVisible(true);
         };
-        SwingUtilities.invokeLater(r);
+        EventQueue.invokeLater(r);
 
     }
-
+/*
     public static void init() {
         JFrame frame = new JFrame("Client");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -120,5 +119,5 @@ public class Client extends JPanel implements MouseListener, KeyListener {
     public void keyTyped(KeyEvent e) {
 
 
-    }
+    }*/
 }
